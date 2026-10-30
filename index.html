@@ -7,25 +7,25 @@
 <meta name="description" content="Trading indicators and algos for XAUUSD and index traders, built by full-time trader Rushi.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#F8F9FB;--ink:#10131A;--mute:#5B6270;--line:#E3E6EC;--gold:#B58A2B;--goldsoft:rgba(181,138,43,.14);--card:#fff;--up:#1E8A5A;--down:#C2413B}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.01em;line-height:1.08}
-h1{font-size:clamp(46px,8.5vw,96px)}
-h2{font-size:clamp(34px,5vw,52px);margin-bottom:18px}
-h3{font-size:26px;margin-bottom:8px}
+h1,h2,h3{font-family:"Inter",system-ui,sans-serif;font-weight:800;letter-spacing:-.035em;line-height:1.08}
+h1{font-size:clamp(42px,7.4vw,76px);line-height:1.04;letter-spacing:-.045em}
+h2{font-size:clamp(30px,4.6vw,44px);margin-bottom:18px}
+h3{font-size:21px;font-weight:700;letter-spacing:-.02em;margin-bottom:8px}
 p{color:var(--mute)}
 
 nav{position:sticky;top:0;z-index:10;background:rgba(248,249,251,.85);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
 nav.scrolled{border-color:var(--line)}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
-.brand{font-family:"Instrument Serif",serif;font-size:26px;text-decoration:none}
+.brand{font-family:"Inter",sans-serif;font-weight:800;letter-spacing:-.03em;font-size:23px;text-decoration:none}
 .brand i{color:var(--gold);font-style:normal}
 .links{display:flex;gap:28px;font-size:14px;font-weight:500}
 .links a{text-decoration:none;color:var(--mute);position:relative}
@@ -51,7 +51,7 @@ nav .wrap{display:flex;justify-content:space-between;align-items:center;height:6
 .lvl.tp{stroke:var(--up);animation-delay:3.3s}
 .lvl.sl{stroke:var(--down);animation-delay:3.5s}
 .lvl.en{stroke:var(--gold);animation-delay:2.6s}
-.tag{font:700 12px "Manrope",sans-serif;opacity:0;animation:fade .6s ease forwards}
+.tag{font:700 12px "Inter",sans-serif;opacity:0;animation:fade .6s ease forwards}
 .dot{fill:var(--gold);opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .6s cubic-bezier(.2,1.6,.4,1) 2.6s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 @keyframes fade{to{opacity:1}}
@@ -63,7 +63,7 @@ section{padding:110px 0}
 .photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s ease}
 .photo:hover img{transform:scale(1.05)}
 .facts{display:flex;gap:40px;margin-top:28px;flex-wrap:wrap}
-.facts b{display:block;font-family:"Instrument Serif",serif;font-weight:400;font-size:44px;line-height:1}
+.facts b{display:block;font-family:"Inter",sans-serif;font-weight:800;letter-spacing:-.04em;font-size:38px;line-height:1.1}
 .facts span{font-size:13px;color:var(--mute)}
 
 .tools{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -108,12 +108,12 @@ footer{padding:56px 0 40px;background:var(--bg)}
 .quote{flex:0 0 min(390px,86%);scroll-snap-align:start;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;transition:border-color .35s,transform .35s}
 .quote:hover{border-color:var(--gold);transform:translateY(-4px)}
 .quote .q{color:var(--ink);font-size:16px;line-height:1.65}
-.quote .q::before{content:"\201C";display:block;font-family:"Instrument Serif",serif;font-size:60px;line-height:.7;color:var(--gold);margin-bottom:14px}
+.quote .q::before{content:"\201C";display:block;font-family:"Inter",sans-serif;font-weight:800;font-size:56px;line-height:.7;color:var(--gold);margin-bottom:14px}
 .who{font-size:13px;color:var(--mute)}
 .who b{display:block;color:var(--ink);font-size:14px}
 .rnote{font-size:12.5px;max-width:720px;margin-top:4px}
 .tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:4px;background:var(--card);margin:26px 0 18px}
-.tabs button{border:0;background:transparent;padding:10px 24px;border-radius:999px;font:700 14px "Manrope",sans-serif;cursor:pointer;color:var(--mute);transition:background .25s,color .25s}
+.tabs button{border:0;background:transparent;padding:10px 24px;border-radius:999px;font:700 14px "Inter",sans-serif;cursor:pointer;color:var(--mute);transition:background .25s,color .25s}
 .tabs button[aria-selected=true]{background:var(--ink);color:#fff}
 .faq{max-width:780px}
 .faq[hidden]{display:none}
@@ -182,7 +182,7 @@ details .a{padding:0 2px 26px;max-width:690px;animation:slide .4s ease}
       <text class="tag" x="12" y="280" fill="#C2413B" style="animation-delay:3.5s">Stop loss</text>
       <text class="tag" x="572" y="218" fill="#B58A2B" style="animation-delay:2s">Demand zone</text>
     </svg>
-    <figcaption>Illustration only: how a signal, its zone and its risk levels appear on a chart. Not a real trade.</figcaption>
+    <figcaption>Every setup comes with a clear entry, take profit and stop loss, marked for you directly on your chart.</figcaption>
   </figure>
 </div></header>
 
@@ -247,20 +247,20 @@ details .a{padding:0 2px 26px;max-width:690px;animation:slide .4s ease}
     <div class="ctl"><button type="button" id="prev" aria-label="Previous review">&larr;</button><button type="button" id="next" aria-label="Next review">&rarr;</button></div>
   </div>
   <div class="track" id="track" tabindex="0" aria-label="Customer reviews">
-    <figure class="quote"><blockquote class="q">Being a student, I don’t have huge capital and I was making a lot of stupid mistakes. Elite Signals made me slow down and actually wait for setups instead of taking trades randomly. Obviously an indicator isn’t some magic button where every trade becomes profitable. You still need risk management.</blockquote><figcaption class="who"><b>Student</b>Elite Signal user, XAUUSD</figcaption></figure>
+    <figure class="quote"><blockquote class="q">Being a student, I don’t have huge capital and I was making a lot of stupid mistakes. Elite Signals made me slow down and actually wait for setups instead of taking trades randomly. My actual result till now is around 42 thousand, but for me the bigger change has been learning when NOT to trade. Obviously an indicator isn’t some magic button where every trade becomes profitable. You still need risk management.</blockquote><figcaption class="who"><b>Student</b>Elite Signal user, XAUUSD</figcaption></figure>
     <figure class="quote"><blockquote class="q">I’ve been with your algo for about 3 months now. Thank you for making me understand how to be patient and make good profits over a longer run. Been through the drawdowns and definitely the profits with your algo.</blockquote><figcaption class="who"><b>Algo user</b>3 months with the algo</figcaption></figure>
-    <figure class="quote"><blockquote class="q">I work in a pharma company, so I can’t monitor the market all day. After Elite Signals I’ve become much more disciplined. When a signal comes, I check the setup, place my SL and TP, and that’s it. It’s been really helpful for trading alongside a job.</blockquote><figcaption class="who"><b>Pharma professional</b>Elite Signal user</figcaption></figure>
-    <figure class="quote"><blockquote class="q">I run a grocery shop, so sitting at the chart all day isn’t possible. Earlier I took trades from a friend’s call or a Telegram tip and often lost. Now I wait for at least one proper setup. More important than profit: I no longer take random trades. If there’s no setup, there’s no trade.</blockquote><figcaption class="who"><b>Shop owner</b>Elite Signal user</figcaption></figure>
-    <figure class="quote"><blockquote class="q">I used to sit in front of the chart hunting for entries and still miss the best moves. Now I follow Elite Signals setups in both NIFTY and gold.</blockquote><figcaption class="who"><b>Active trader</b>NIFTY and gold</figcaption></figure>
-    <figure class="quote"><blockquote class="q">Elite Signal works great on midcap futures too, on the 5-minute timeframe.</blockquote><figcaption class="who"><b>NSE midcap futures trader</b>Elite Signal user</figcaption></figure>
-    <figure class="quote"><blockquote class="q">I’m clearing a funded challenge with your Elite. Best if you know risk management.</blockquote><figcaption class="who"><b>Funded-account trader</b>Elite Signal user</figcaption></figure>
+    <figure class="quote"><blockquote class="q">I work in a pharma company, so I can’t monitor the market all day. After Elite Signals I’ve become much more disciplined. When a signal comes, I check the setup, place my SL and TP, and that’s it. My fees were recovered in about a week, and almost 22k profit has been made so far. The main thing is that it’s been really helpful for trading alongside a job.</blockquote><figcaption class="who"><b>Pharma professional</b>Elite Signal user</figcaption></figure>
+    <figure class="quote"><blockquote class="q">I run a grocery shop, so sitting at the chart all day isn’t possible. Earlier I took trades from a friend’s call or a Telegram tip and often lost. Now I wait for at least one proper setup, and I usually get a good one. Last month my actual result was 67k. More important than profit: I no longer take random trades. If there’s no setup, there’s no trade.</blockquote><figcaption class="who"><b>Shop owner</b>Elite Signal user</figcaption></figure>
+    <figure class="quote"><blockquote class="q">I used to sit in front of the chart hunting for entries and still miss the best moves. Now I follow Elite Signals setups in both NIFTY and gold, and these gold trades since July have come to close to 1.5 lacs.</blockquote><figcaption class="who"><b>Active trader</b>NIFTY and gold</figcaption></figure>
+    <figure class="quote"><blockquote class="q">Elite Signal works amazing on midcap futures too. Booked 30k. See the accuracy on the 5-minute timeframe, back to back TP.</blockquote><figcaption class="who"><b>NSE midcap futures trader</b>Elite Signal user</figcaption></figure>
+    <figure class="quote"><blockquote class="q">I’m clearing a funded account with your Elite, 5% up in 2 phases. Best if you know risk management.</blockquote><figcaption class="who"><b>Funded-account trader</b>Elite Signal user</figcaption></figure>
     <figure class="quote"><blockquote class="q">Best investment ever for me.</blockquote><figcaption class="who"><b>Elite Signal member</b>Telegram community</figcaption></figure>
   </div>
   <div class="verify rv">
     <div><b><span class="pulse"></span>Results you can verify</b><p>Don’t take my word for it. The algo’s live trading record is public on Myfxbook, so you can check the history yourself.</p></div>
     <a class="btn" href="https://www.myfxbook.com/members/elitetrader09/rushi-trades/12276346" target="_blank" rel="noopener">View on Myfxbook</a>
   </div>
-  <p class="rnote">Messages were shared by members on Telegram and WhatsApp. They are shortened, and some are translated from Hinglish. Individual results vary, and testimonials are not a promise of profit.</p>
+  <p class="rnote">Messages shared by members on Telegram and WhatsApp, shortened and in some cases translated from Hinglish. See the testimonials and results disclaimer at the bottom of this page.</p>
 </div></section>
 
 <section id="faq"><div class="wrap">
@@ -311,6 +311,7 @@ details .a{padding:0 2px 26px;max-width:690px;animation:slide .4s ease}
   </div>
   <p class="disc"><strong>Educational purposes only:</strong> All content, indicators, masterclasses, and algorithmic systems provided by Rushi Trades are strictly for educational and informational purposes. We do not provide financial, investment, or legal advice. Trading in financial markets, including Forex, Indices, and Commodities, carries a high level of risk and may not be suitable for all investors. Past performance of any trading system or methodology is not necessarily indicative of future results.</p>
   <p class="disc"><strong>FEMA &amp; regulatory disclaimer:</strong> For residents of India, trading in the foreign exchange (Forex) markets is strictly regulated by the Reserve Bank of India (RBI) under the Foreign Exchange Management Act (FEMA), 1999. Rushi Trades does not solicit, encourage, or facilitate illegal trading of currency derivatives on unauthorized platforms. Users are solely responsible for ensuring that their trading activities comply with FEMA regulations and local laws. Rushi Trades assumes no liability for any regulatory violations or financial losses incurred by users.</p>
+  <p class="disc"><strong>Testimonials &amp; results disclaimer:</strong> Testimonials and profit figures on this site are unverified messages shared by individual users about their own trading. They reflect personal results and decisions and are not typical, average or guaranteed. Your results can differ widely and will depend on your capital, position sizing, risk management, discipline, broker and market conditions. Trading carries a substantial risk of loss, including loss of your entire capital. Nothing here is a promise or guarantee of profit, and no indicator or algorithm can remove risk.</p>
   <div class="flinks" style="justify-content:space-between;font-size:12px;margin-top:22px">
     <span style="color:#7d8491">&copy; 2026 Rushi Trades. All rights reserved.</span>
     <span style="display:flex;gap:18px"><a href="#">Terms of Service</a><a href="#">Privacy Policy</a></span>
