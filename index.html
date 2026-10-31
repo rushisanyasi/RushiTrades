@@ -8,7 +8,6 @@
 <link rel="canonical" href="https://rushitrades.com/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#F8F9FB">
-<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rushi Trades">
 <meta property="og:title" content="Rushi Trades | Data-driven trading systems">
@@ -27,7 +26,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#F8F9FB;--ink:#10131A;--mute:#5B6270;--line:#E3E6EC;--gold:#B58A2B;--goldsoft:rgba(181,138,43,.14);--card:#fff;--up:#1E8A5A;--down:#C2413B}
-:root[data-theme="dark"]{--bg:#0D0F14;--ink:#F1F2F5;--mute:#9AA1AE;--line:#262A33;--card:#151821;--gold:#D4AF5A;--goldsoft:rgba(212,175,90,.16);--up:#3CCB8A;--down:#F0716A;--body:#C7CCD6}
 :root{--body:#3b414d}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -148,9 +146,6 @@ details .a{padding:0 2px 26px;max-width:690px;animation:slide .4s ease}
 .verify b{display:flex;align-items:center;gap:10px;font-size:16px}
 .verify p{font-size:14px;margin-top:4px;max-width:560px}
 .verify .btn{padding:12px 24px}
-.ticker{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);height:44px;overflow:hidden}
-.ticker .tradingview-widget-container,.ticker .tradingview-widget-container__widget,.ticker iframe{height:44px!important}
-.ticker .tradingview-widget-copyright{display:none}
 .fab{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:20;display:flex;align-items:center;gap:10px;background:#229ED9;color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:13px 20px 13px 16px;border-radius:999px;box-shadow:0 10px 28px -8px rgba(34,158,217,.65);opacity:0;transform:translateY(16px);animation:fabin .7s ease 1.4s forwards;transition:transform .25s,box-shadow .25s}
 .fab:hover{transform:translateY(-3px);box-shadow:0 16px 34px -8px rgba(34,158,217,.7)}
 .fab svg{width:20px;height:20px;fill:#fff}
@@ -190,16 +185,6 @@ body.lock{overflow:hidden}
 .navr{display:flex;align-items:center;gap:18px}
 .navcta{display:inline-block;padding:9px 18px;font-size:13px;font-weight:700;text-decoration:none;border-radius:999px;background:var(--ink);color:var(--bg);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .3s,transform .3s,visibility .3s}
 .navcta.show{opacity:1;visibility:visible;transform:none}
-.theme{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:border-color .25s,transform .4s}
-.theme:hover{border-color:var(--ink);transform:rotate(18deg)}
-.theme .sun{display:none}
-:root[data-theme="dark"] .theme .sun{display:block}
-:root[data-theme="dark"] .theme .moon{display:none}
-.hsteps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:40px}
-.hs{border:1px solid var(--line);border-radius:18px;background:var(--card);padding:28px}
-.hs span{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:800;margin-bottom:16px}
-.hs h3{font-size:20px}
-.hs p{font-size:15px;margin:0}
 .kf{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0 4px}
 .kf div{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg)}
 .kf small{display:block;font-size:11.5px;color:var(--mute);margin-bottom:2px}
@@ -235,11 +220,8 @@ body.lock{overflow:hidden}
     <a href="https://t.me/rushitradess" target="_blank" rel="noopener">Join Telegram</a>
   </div>
   <a class="navcta" id="navcta" href="https://superprofile.bio/vp/rushitrades" target="_blank" rel="noopener">Get access</a>
-  <button class="theme" id="theme" type="button" aria-label="Switch to dark mode"><svg class="moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
-  </div>
+    </div>
 </div></nav>
-
-<div class="ticker"><div class="tradingview-widget-container" id="tvbox"></div></div>
 
 <header class="hero" id="top"><div class="wrap">
   <h1>Data-driven<br>trading systems.</h1>
@@ -399,7 +381,7 @@ body.lock{overflow:hidden}
   <p class="disc"><strong>FEMA &amp; regulatory disclaimer:</strong> For residents of India, trading in the foreign exchange (Forex) markets is strictly regulated by the Reserve Bank of India (RBI) under the Foreign Exchange Management Act (FEMA), 1999. Rushi Trades does not solicit, encourage, or facilitate illegal trading of currency derivatives on unauthorized platforms. Users are solely responsible for ensuring that their trading activities comply with FEMA regulations and local laws. Rushi Trades assumes no liability for any regulatory violations or financial losses incurred by users.</p>
   <p class="disc"><strong>Testimonials &amp; results disclaimer:</strong> Testimonials and profit figures on this site are unverified messages shared by individual users about their own trading. They reflect personal results and decisions and are not typical, average or guaranteed. Your results can differ widely and will depend on your capital, position sizing, risk management, discipline, broker and market conditions. Trading carries a substantial risk of loss, including loss of your entire capital. Nothing here is a promise or guarantee of profit, and no indicator or algorithm can remove risk.</p>
   <div class="flinks" style="justify-content:space-between;font-size:12px;margin-top:22px">
-    <span style="color:#7d8491">&copy; 2026 Rushi Trades. All rights reserved. Market ticker by <a href="https://www.tradingview.com/" target="_blank" rel="noopener nofollow">TradingView</a>.</span>
+    <span style="color:#7d8491">&copy; 2026 Rushi Trades. All rights reserved.</span>
     <span style="display:flex;gap:18px"><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></span>
   </div>
 </div></footer>
@@ -445,7 +427,7 @@ signal:{tag:'TradingView indicator',title:'Elite Signal Indicator',bundle:1,
  steps:['Add it to your chart and pick your market','When a signal appears, check the setup and context','Use the marked SL and TP, and size your risk'],
  best:'Traders with a job or limited screen time who want clear entries and defined risk.',
  note:'It’s a tool, not a magic button. Risk management is still your job, and losing trades will happen.'},
-zones:{tag:'Free · TradingView indicator',title:'Institutional Zones Mapper',
+zones:{tag:'Free · TradingView indicator',title:'Institutional Zones Mapper',link:'https://t.me/rushitradess/2057',
  sum:'An automated tool that maps hidden supply, demand and key institutional liquidity levels directly on your charts.',
  facts:[['Platform','TradingView'],['Cost','Free'],['Shows','Supply & demand zones']],
  gets:['Supply, demand and key reversal zones drawn for you','Free to use','A clear map of where price may react','Pairs well with the Elite Signal Indicator'],
@@ -491,7 +473,7 @@ function openPD(k){
    +'<h4>How it works</h4><div class="steps">'+p.steps.map(x=>'<div>'+x+'</div>').join('')+'</div>'
    +'<h4>Best for</h4><p class="best">'+p.best+'</p>'
    +'<div class="good"><b>Good to know:</b> '+p.note+'</div>'
-   +'<div class="pd-cta"><a class="btn" href="'+BUY+'" target="_blank" rel="noopener">Get access today</a>'
+   +'<div class="pd-cta"><a class="btn" href="'+(p.link||BUY)+'" target="_blank" rel="noopener">Get access today</a>'
    +'<a class="btn ghost" href="https://t.me/rushitrades" target="_blank" rel="noopener">Ask a question</a></div>'
    +(p.bundle?'<p class="inc">Included in the all-in-one bundle with every indicator and algo.</p>':'');
   pdb.scrollTop=0; dlg.showModal(); document.body.classList.add('lock');
@@ -505,31 +487,7 @@ document.addEventListener('keydown',e=>{
 });
 dlg.addEventListener('close',()=>document.body.classList.remove('lock'));
 
-/* theme + live widgets */
-const root=document.documentElement,tbtn=document.getElementById('theme'),cta=document.getElementById('navcta');
-function mountTicker(t){
-  const box=document.getElementById('tvbox'); if(!box) return;
-  box.innerHTML='<div class="tradingview-widget-container__widget"></div>';
-  const sc=document.createElement('script');
-  sc.src='https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js'; sc.async=true;
-  sc.innerHTML=JSON.stringify({symbols:[{proName:'OANDA:XAUUSD',title:'Gold'},{"proName":"OANDA:XAGUSD","title":"Silver"},{proName:'CAPITALCOM:NIFTY50',title:'Nifty 50'},{proName:'BITSTAMP:BTCUSD',title:'Bitcoin'}],showSymbolLogo:false,colorTheme:t,isTransparent:true,displayMode:'adaptive',locale:'en'});
-  box.appendChild(sc);
-}
-function mfx(t){
-  const im=document.querySelector('.live img'); if(!im) return;
-  const u=new URL(im.src), q=u.searchParams, d=t==='dark';
-  q.set('bgColor',d?'151821':'ffffff'); q.set('chartbgc',d?'151821':'ffffff');
-  q.set('gridColor',d?'2e3340':'bdbdbd'); q.set('fontColor',d?'c7ccd6':'525252');
-  im.src=u.toString();
-}
-function applyTheme(t,save){
-  root.dataset.theme=t;
-  if(save){try{localStorage.setItem('theme',t)}catch(e){}}
-  tbtn.setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');
-  mountTicker(t); mfx(t);
-}
-tbtn.addEventListener('click',()=>applyTheme(root.dataset.theme==='dark'?'light':'dark',true));
-applyTheme(root.dataset.theme==='dark'?'dark':'light',false);
+const cta=document.getElementById('navcta');
 const onScroll=()=>cta.classList.toggle('show',scrollY>560);
 addEventListener('scroll',onScroll,{passive:true}); onScroll();
 </script>
