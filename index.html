@@ -7,7 +7,7 @@
 <meta name="description" content="Trading indicators and algos for XAUUSD and index traders, built by full-time trader Rushi.">
 <link rel="canonical" href="https://rushitrades.com/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#0B0B0A">
+<meta name="theme-color" content="#0B0B0C">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rushi Trades">
 <meta property="og:title" content="Rushi Trades | Data-driven trading systems">
@@ -26,12 +26,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js')</script>
 <style>
-html,body{background:#0B0B0A}
+html,body{background:#0B0B0C}
 :root{
- --bg:#0B0B0A;--bg2:#121210;--bg3:#191916;
- --ink:#EDE9DD;--mute:rgba(237,233,221,.64);--faint:rgba(237,233,221,.4);--line:rgba(237,233,221,.12);--line2:rgba(237,233,221,.2);
- --gold:#D4AF5A;--goldsoft:rgba(212,175,90,.12);--up:#5DBB8E;--down:#E2675E;
- --paper:#EDE9DD;--paperink:#12120F;--papermute:rgba(18,18,15,.62);--paperline:rgba(18,18,15,.14);
+ --bg:#0B0B0C;--bg2:#141416;--bg3:#1B1B1E;
+ --ink:#F5F5F2;--mute:rgba(245,245,242,.64);--faint:rgba(245,245,242,.4);--line:rgba(245,245,242,.12);--line2:rgba(245,245,242,.2);
+ --gold:#C6F432;--goldsoft:rgba(198,244,50,.1);--up:#5DBB8E;--down:#E2675E;
+ --paper:#F5F5F2;--paperink:#0B0B0C;--papermute:rgba(11,11,12,.62);--paperline:rgba(11,11,12,.13);
  --serif:"Instrument Serif",Georgia,serif;--sans:"Inter Tight",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
  --e-out:cubic-bezier(.16,1,.3,1);--e-io:cubic-bezier(.4,0,.2,1);
  --gut:clamp(20px,4vw,56px)
@@ -39,7 +39,7 @@ html,body{background:#0B0B0A}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip}
 body{color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.6;letter-spacing:-.01em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip}
-::selection{background:rgba(212,175,90,.32);color:var(--ink)}
+::selection{background:rgba(198,244,50,.32);color:var(--ink)}
 a{color:inherit}
 img{max-width:100%;height:auto}
 :focus-visible{outline:1.5px solid var(--gold);outline-offset:4px;border-radius:4px}
@@ -57,18 +57,19 @@ p{color:var(--mute)}
 .grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:60;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* buttons */
-.btn{--h:48px;display:inline-flex;align-items:center;gap:12px;height:var(--h);padding:0 8px 0 24px;border-radius:999px;font:500 14.5px/1 var(--sans);letter-spacing:-.005em;text-decoration:none;background:var(--ink);color:var(--bg);border:1px solid var(--ink);transition:background .25s var(--e-io),color .25s,border-color .25s,transform .2s}
-.btn .ar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--bg);color:var(--ink);transition:transform .35s var(--e-out)}
+.btn{--h:48px;display:inline-flex;align-items:center;gap:12px;height:var(--h);padding:0 8px 0 24px;border-radius:999px;font:500 14.5px/1 var(--sans);letter-spacing:-.005em;text-decoration:none;background:var(--gold);color:#0B0B0C;border:1px solid var(--gold);transition:background .25s var(--e-io),color .25s,border-color .25s,transform .2s}
+.btn .ar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#0B0B0C;color:var(--gold);transition:transform .35s var(--e-out)}
 .btn .ar svg{width:14px;height:14px}
 .btn:hover .ar{transform:rotate(-45deg)}
 .btn:active{transform:scale(.97)}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line2);padding:0 22px}
+.btn:not(.ghost):hover{box-shadow:0 0 0 4px rgba(198,244,50,.18)}
 .btn.ghost:hover{border-color:var(--ink)}
 .btn.plain{padding:0 22px}
 
 /* nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:40;transition:background .4s var(--e-io),border-color .4s;border-bottom:1px solid transparent}
-nav.scrolled{background:rgba(11,11,10,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+nav.scrolled{background:rgba(11,11,12,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:none}
 .brand{font:500 19px/1 var(--sans);letter-spacing:-.04em;text-decoration:none;display:inline-flex;align-items:baseline;gap:1px}
 .brand i{color:var(--gold);font-style:normal}
@@ -96,10 +97,10 @@ nav.open+.mmenu{opacity:1;visibility:visible}
 .cd{opacity:0;transform-box:fill-box;transform-origin:50% 100%;animation:cdin .5s var(--e-out) forwards}
 .cd line{stroke-width:1.2;vector-effect:non-scaling-stroke}
 .cd.u rect{fill:var(--ink)} .cd.u line{stroke:var(--ink)}
-.cd.d rect{fill:var(--bg);stroke:rgba(237,233,221,.5);stroke-width:1.2;vector-effect:non-scaling-stroke} .cd.d line{stroke:rgba(237,233,221,.5)}
+.cd.d rect{fill:var(--bg);stroke:rgba(245,245,242,.5);stroke-width:1.2;vector-effect:non-scaling-stroke} .cd.d line{stroke:rgba(245,245,242,.5)}
 .cd.hl rect{fill:var(--gold);stroke:var(--gold)} .cd.hl line{stroke:var(--gold)}
 @keyframes cdin{from{opacity:0;transform:scaleY(.2)}to{opacity:1;transform:none}}
-.zone{fill:var(--goldsoft);stroke:rgba(212,175,90,.55);stroke-width:1;vector-effect:non-scaling-stroke;opacity:0;animation:fade .7s ease forwards}
+.zone{fill:var(--goldsoft);stroke:rgba(198,244,50,.55);stroke-width:1;vector-effect:non-scaling-stroke;opacity:0;animation:fade .7s ease forwards}
 .lvl{stroke-width:1.2;stroke-dasharray:5 6;vector-effect:non-scaling-stroke;opacity:0;animation:fade .6s ease forwards}
 .lvl.tp{stroke:var(--up)} .lvl.en{stroke:var(--gold)} .lvl.sl{stroke:var(--down)}
 .ldot{fill:var(--gold);opacity:0;transform-box:fill-box;transform-origin:center;animation:pop .6s cubic-bezier(.34,1.56,.64,1) forwards}
@@ -112,8 +113,8 @@ nav.open+.mmenu{opacity:1;visibility:visible}
 .ctag.tp{color:var(--up)} .ctag.en{color:var(--gold)} .ctag.sl{color:var(--down)}
 .ztag{position:absolute;font:400 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:0;animation:fade .6s ease forwards;transform:translateY(-140%)}
 .xh{position:absolute;pointer-events:none;opacity:0;transition:opacity .25s}
-.xh.v{top:0;bottom:0;width:1px;background:linear-gradient(var(--line2),var(--line2)) center/1px 100% no-repeat;border-left:1px dashed rgba(237,233,221,.18);background:none}
-.xh.h{left:0;right:0;height:1px;border-top:1px dashed rgba(237,233,221,.18)}
+.xh.v{top:0;bottom:0;width:1px;background:linear-gradient(var(--line2),var(--line2)) center/1px 100% no-repeat;border-left:1px dashed rgba(245,245,242,.18);background:none}
+.xh.h{left:0;right:0;height:1px;border-top:1px dashed rgba(245,245,242,.18)}
 .chartwrap.hov .xh{opacity:1}
 .chartnote{position:absolute;right:var(--gut);top:94px;font:400 10.5px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
 
@@ -157,11 +158,11 @@ section{padding:clamp(96px,13vw,168px) 0;position:relative}
 
 /* about */
 .about{display:grid;grid-template-columns:minmax(300px,520px) 1fr;gap:clamp(40px,6vw,96px);align-items:center}
-.portrait{position:relative;aspect-ratio:1/1.08;border-radius:28px;overflow:hidden;background:radial-gradient(120% 80% at 50% 100%,#1d1b15 0%,var(--bg2) 60%);border:1px solid var(--line)}
-.xau{position:absolute;left:50%;top:6%;transform:translateX(-50%);font:600 clamp(80px,13vw,190px)/.8 var(--sans);letter-spacing:-.07em;color:transparent;-webkit-text-stroke:1px rgba(212,175,90,.38);white-space:nowrap;user-select:none}
-.portrait img{position:absolute;left:50%;bottom:0;width:96%;transform:translateX(-50%);filter:drop-shadow(0 0 1px rgba(212,175,90,.35)) drop-shadow(-18px 0 40px rgba(212,175,90,.10));transition:transform 1s var(--e-out)}
+.portrait{position:relative;aspect-ratio:1/1.08;border-radius:28px;overflow:hidden;background:radial-gradient(120% 80% at 50% 100%,#1B1B1E 0%,var(--bg2) 60%);border:1px solid var(--line)}
+.xau{position:absolute;left:50%;top:6%;transform:translateX(-50%);font:600 clamp(80px,13vw,190px)/.8 var(--sans);letter-spacing:-.07em;color:transparent;-webkit-text-stroke:1px rgba(198,244,50,.38);white-space:nowrap;user-select:none}
+.portrait img{position:absolute;left:50%;bottom:0;width:96%;transform:translateX(-50%);filter:drop-shadow(0 0 1px rgba(198,244,50,.35)) drop-shadow(-18px 0 40px rgba(198,244,50,.10));transition:transform 1s var(--e-out)}
 .portrait:hover img{transform:translateX(-50%) scale(1.025)}
-.portrait figcaption{position:absolute;left:18px;bottom:18px;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(11,11,10,.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line2);font:400 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.portrait figcaption{position:absolute;left:18px;bottom:18px;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(11,11,12,.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line2);font:400 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
 .about p.body{font-size:17.5px;line-height:1.65;max-width:32rem;color:var(--mute)}
 .about p.body b{color:var(--ink);font-weight:400}
 .facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:clamp(28px,5vw,72px);margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
@@ -172,7 +173,7 @@ section{padding:clamp(96px,13vw,168px) 0;position:relative}
 .rows{border-top:1px solid var(--line)}
 .row{position:relative;display:grid;grid-template-columns:64px 1.1fr 1.4fr 48px;gap:28px;align-items:center;padding:34px 8px;border-bottom:1px solid var(--line);cursor:pointer;transition:padding .45s var(--e-out),background .35s}
 .row::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--e-out)}
-.row:hover,.row:focus-visible{padding-left:22px;background:linear-gradient(90deg,rgba(212,175,90,.06),transparent 60%)}
+.row:hover,.row:focus-visible{padding-left:22px;background:linear-gradient(90deg,rgba(198,244,50,.06),transparent 60%)}
 .row:hover::before,.row:focus-visible::before{transform:scaleX(1)}
 .row .n{font:400 12px/1 var(--mono);letter-spacing:.1em;color:var(--faint)}
 .row h3{font-size:clamp(24px,2.6vw,34px)}
@@ -188,12 +189,12 @@ section{padding:clamp(96px,13vw,168px) 0;position:relative}
 .algo .row h3{font-size:clamp(21px,2vw,26px)}
 .algo .row .go{width:44px;height:44px}
 .pilltag{font:400 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:7px 11px;border-radius:999px;border:1px solid var(--line2);color:var(--mute);white-space:nowrap}
-.pilltag.g{border-color:rgba(212,175,90,.5);color:var(--gold)}
+.pilltag.g{border-color:rgba(198,244,50,.5);color:var(--gold)}
 .pilltag.r{border-color:rgba(226,103,94,.45);color:var(--down)}
 .live{background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:22px;position:sticky;top:96px}
 .live .lh{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
 .live .lh span{display:flex;align-items:center;font:400 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-.live a.w{display:block;border-radius:14px;overflow:hidden;background:#121210;border:1px solid var(--line)}
+.live a.w{display:block;border-radius:14px;overflow:hidden;background:var(--bg2);border:1px solid var(--line)}
 .live img{width:100%;height:auto;display:block;aspect-ratio:400/250}
 .live p{font-size:13px;margin-top:14px;line-height:1.5}
 .live .btn{margin-top:18px;width:100%;justify-content:space-between}
@@ -209,15 +210,15 @@ section{padding:clamp(96px,13vw,168px) 0;position:relative}
 /* videos */
 .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .vcard{display:flex;flex-direction:column;text-decoration:none;color:inherit;border-radius:22px;overflow:hidden;background:var(--bg2);border:1px solid var(--line);transition:border-color .35s,transform .45s var(--e-out)}
-.vcard:hover,.vcard:focus-visible{border-color:rgba(212,175,90,.45);transform:translateY(-4px)}
+.vcard:hover,.vcard:focus-visible{border-color:rgba(198,244,50,.45);transform:translateY(-4px)}
 .vthumb{position:relative;aspect-ratio:16/9;background:#000;overflow:hidden}
 .vthumb img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.85);transition:transform .7s var(--e-out),filter .5s}
 .vcard:hover .vthumb img{transform:scale(1.05);filter:saturate(1)}
-.play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,transparent 45%,rgba(11,11,10,.55))}
-.play i{width:58px;height:58px;border-radius:50%;background:rgba(237,233,221,.92);display:grid;place-items:center;transition:transform .35s var(--e-out)}
+.play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,transparent 45%,rgba(11,11,12,.55))}
+.play i{width:58px;height:58px;border-radius:50%;background:rgba(245,245,242,.92);display:grid;place-items:center;transition:transform .35s var(--e-out)}
 .vcard:hover .play i{transform:scale(1.08)}
 .play svg{width:20px;height:20px;margin-left:3px;fill:var(--bg)}
-.vtag{position:absolute;top:12px;left:12px;font:400 10.5px/1 var(--mono)!important;font-style:normal;letter-spacing:.14em;text-transform:uppercase;background:rgba(11,11,10,.7);backdrop-filter:blur(8px);color:var(--ink);padding:7px 11px;border-radius:999px}
+.vtag{position:absolute;top:12px;left:12px;font:400 10.5px/1 var(--mono)!important;font-style:normal;letter-spacing:.14em;text-transform:uppercase;background:rgba(11,11,12,.7);backdrop-filter:blur(8px);color:var(--ink);padding:7px 11px;border-radius:999px}
 .vbody{padding:22px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
 .vbody h3{font-size:19px;line-height:1.25;font-weight:500;letter-spacing:-.025em}
 .vbody p{font-size:14.5px;flex:1;line-height:1.55}
@@ -228,25 +229,25 @@ section{padding:clamp(96px,13vw,168px) 0;position:relative}
 /* reviews: paper sheet */
 .paper{background:var(--paper);color:var(--paperink);border-radius:clamp(28px,4vw,48px)}
 .paper p{color:var(--papermute)}
-.paper .label{color:rgba(18,18,15,.45)}
-.paper .label b{color:#9A7524}
-.paper h2 .s{color:rgba(18,18,15,.55)}
+.paper .label{color:rgba(11,11,12,.45)}
+.paper .label b{color:#5C7A00}
+.paper h2 .s{color:rgba(11,11,12,.55)}
 .ctl{display:flex;gap:10px}
 .ctl button{width:52px;height:52px;border-radius:50%;border:1px solid var(--paperline);background:transparent;cursor:pointer;color:var(--paperink);display:grid;place-items:center;transition:background .25s,color .25s,border-color .25s}
 .ctl button svg{width:18px;height:18px}
 .ctl button:hover{background:var(--paperink);color:var(--paper);border-color:var(--paperink)}
 .track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px var(--gut) 8px;scroll-padding-left:var(--gut);scrollbar-width:none;margin:0 calc(var(--gut)*-1)}
 .track::-webkit-scrollbar{display:none}
-.quote{flex:0 0 min(420px,84%);scroll-snap-align:start;display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding:30px 28px 26px;border-radius:24px;background:#F6F3EA;border:1px solid var(--paperline);transition:transform .45s var(--e-out)}
+.quote{flex:0 0 min(420px,84%);scroll-snap-align:start;display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding:30px 28px 26px;border-radius:24px;background:#FFFFFF;border:1px solid var(--paperline);transition:transform .45s var(--e-out)}
 .quote:hover{transform:translateY(-4px)}
 .quote .q{color:var(--paperink);font-size:16.5px;line-height:1.6;letter-spacing:-.01em}
-.quote .q::before{content:"\201C";display:block;font:400 72px/.6 var(--serif);color:#9A7524;margin-bottom:14px;height:34px}
-.who{font:400 11px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(18,18,15,.5);padding-top:18px;border-top:1px solid var(--paperline)}
+.quote .q::before{content:"\201C";display:block;font:400 72px/.6 var(--serif);color:#5C7A00;margin-bottom:14px;height:34px}
+.who{font:400 11px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(11,11,12,.5);padding-top:18px;border-top:1px solid var(--paperline)}
 .who b{display:block;color:var(--paperink);font:500 15px/1.3 var(--sans);letter-spacing:-.015em;text-transform:none;margin-bottom:2px}
 .verify{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:44px;padding:26px 28px;border-radius:24px;background:var(--paperink);color:var(--ink)}
 .verify b{display:flex;align-items:center;font-size:18px;font-weight:500;letter-spacing:-.02em}
 .verify p{font-size:14.5px;margin-top:6px;max-width:560px;color:var(--mute)}
-.paper .rnote{color:rgba(18,18,15,.5)}
+.paper .rnote{color:rgba(11,11,12,.5)}
 
 /* faq */
 .faqgrid{display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:clamp(40px,6vw,96px);align-items:start}
@@ -278,17 +279,17 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line);overflow:hidden}
 .flinks{display:flex;gap:26px;flex-wrap:wrap;font-size:14px}
 .flinks a{text-decoration:none;color:var(--mute);transition:color .2s}
 .flinks a:hover{color:var(--ink)}
-.disc{font-size:11.5px;line-height:1.75;color:rgba(237,233,221,.42);margin-bottom:14px;max-width:980px}
+.disc{font-size:11.5px;line-height:1.75;color:rgba(245,245,242,.42);margin-bottom:14px;max-width:980px}
 .disc strong{color:var(--mute);font-weight:500}
 .fbase{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font:400 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-top:30px}
 .fbase a{text-decoration:none;color:var(--faint)} .fbase a:hover{color:var(--ink)}
-.mega{font:500 clamp(64px,16.5vw,260px)/.8 var(--sans);letter-spacing:-.075em;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(237,233,221,.18);margin:60px 0 -0.12em;text-align:center;user-select:none}
+.mega{font:500 clamp(64px,16.5vw,260px)/.8 var(--sans);letter-spacing:-.075em;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(245,245,242,.18);margin:60px 0 -0.12em;text-align:center;user-select:none}
 .mega i{font-style:normal;-webkit-text-stroke:0;color:var(--gold)}
 
 /* fab */
-.fab{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:30;display:flex;align-items:center;gap:10px;height:52px;padding:0 20px 0 6px;border-radius:999px;background:rgba(18,18,16,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line2);color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;opacity:0;transform:translateY(16px);transition:opacity .5s var(--e-out),transform .5s var(--e-out),border-color .25s}
+.fab{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:30;display:flex;align-items:center;gap:10px;height:52px;padding:0 20px 0 6px;border-radius:999px;background:rgba(20,20,22,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line2);color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;opacity:0;transform:translateY(16px);transition:opacity .5s var(--e-out),transform .5s var(--e-out),border-color .25s}
 .fab.show{opacity:1;transform:none}
-.fab:hover{border-color:rgba(212,175,90,.6)}
+.fab:hover{border-color:rgba(198,244,50,.6)}
 .fab i{width:40px;height:40px;border-radius:50%;background:#229ED9;display:grid;place-items:center}
 .fab svg{width:20px;height:20px;fill:#fff}
 
@@ -300,7 +301,7 @@ dialog.pd::backdrop{background:rgba(5,5,4,.66);backdrop-filter:blur(8px);animati
 @keyframes fade2{from{opacity:0}to{opacity:1}}
 .pd-x{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);background:transparent;cursor:pointer;font-size:20px;color:var(--ink);transition:border-color .25s,transform .4s var(--e-out)}
 .pd-x:hover{border-color:var(--ink);transform:rotate(90deg)}
-.pd-tag{display:inline-block;font:400 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(212,175,90,.45);padding:7px 12px;border-radius:999px;margin-bottom:18px}
+.pd-tag{display:inline-block;font:400 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(198,244,50,.45);padding:7px 12px;border-radius:999px;margin-bottom:18px}
 .pd h3{font-size:clamp(30px,4.4vw,44px);letter-spacing:-.045em;font-weight:400;line-height:1;margin:0 48px 14px 0}
 .pd .sum{font-size:16.5px;margin-bottom:8px}
 .pd h4{font:400 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin:30px 0 14px}
@@ -471,16 +472,17 @@ body.lock{overflow:hidden}
   </div>
   <div class="algo">
     <div class="rows">
-      <div class="row rv" data-p="botalpha" role="button" tabindex="0" aria-label="Elite Alpha Bot: view details"><span class="n">A1</span><h3>Elite Alpha Bot</h3><span class="pilltag g">Flagship</span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
-      <div class="row rv" data-p="botgrid" role="button" tabindex="0" aria-label="Elite Grid Bot: view details"><span class="n">A2</span><h3>Elite Grid Bot</h3><span class="pilltag">Major bot</span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
-      <div class="row rv" data-p="botnano" role="button" tabindex="0" aria-label="Elite Nano Grid Bot: view details"><span class="n">A3</span><h3>Elite Nano Grid Bot</h3><span class="pilltag">1–2 lakh accounts</span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
-      <div class="row rv" data-p="bothft" role="button" tabindex="0" aria-label="Elite HFT Grid Bot: view details"><span class="n">A4</span><h3>Elite HFT Grid Bot</h3><span class="pilltag r">High risk</span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      <div class="row rv" data-p="botliq" role="button" tabindex="0" aria-label="Elite Liquidity Bot: view details"><span class="n">A1</span><h3>Elite Liquidity Bot<small>Gold + Bitcoin</small></h3><span class="pilltag g" id="liqpill">Launching soon</span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      <div class="row rv" data-p="botalpha" role="button" tabindex="0" aria-label="Elite Alpha Bot: view details"><span class="n">A2</span><h3>Elite Alpha Bot</h3><span class="pilltag g">Flagship</span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      <div class="row rv" data-p="botgrid" role="button" tabindex="0" aria-label="Elite Grid Bot: view details"><span class="n">A3</span><h3>Elite Grid Bot</h3><span class="pilltag">Major bot</span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      <div class="row rv" data-p="botnano" role="button" tabindex="0" aria-label="Elite Nano Grid Bot: view details"><span class="n">A4</span><h3>Elite Nano Grid Bot</h3><span class="pilltag">Lighter grid</span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
+      <div class="row rv" data-p="bothft" role="button" tabindex="0" aria-label="Elite HFT Grid Bot: view details"><span class="n">A5</span><h3>Elite HFT Grid Bot</h3><span class="pilltag r">High risk</span><span class="go" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
       <p class="rnote" style="margin-top:18px">Tap any bot to see its details.</p>
     </div>
     <aside class="live rv">
       <div class="lh"><span><span class="sdot"></span>Live performance</span><span>Myfxbook</span></div>
       <a class="w" href="https://www.myfxbook.com/members/elitetrader09/rushi-trades/12298304" target="_blank" rel="noopener">
-        <img alt="Myfxbook performance widget for Rushi Trades" width="400" height="250" loading="lazy" src="https://widgets.mfbcdn.net/custom-widget?id=12298304&width=400&height=250&bart=0&linet=2&symbol=XAUUSD&magic=-1&title=RushiTrades&titles=12&bgColor=121210&gridColor=2e2d28&lineColor=d4af5a&barColor=6b5a2e&bar1Color=6b5a2e&fontColor=a9a596&chartbgc=121210&equityColor=5dbb8e"/>
+        <img alt="Myfxbook performance widget for Rushi Trades" width="400" height="250" loading="lazy" src="https://widgets.mfbcdn.net/custom-widget?id=12298304&width=400&height=250&bart=0&linet=2&symbol=XAUUSD&magic=-1&title=RushiTrades&titles=12&bgColor=141416&gridColor=2a2a2e&lineColor=c6f432&barColor=5c7a00&bar1Color=5c7a00&fontColor=a3a3a0&chartbgc=141416&equityColor=5dbb8e"/>
       </a>
       <p>Tracked on Myfxbook. Click the chart to see the full record. Past performance does not guarantee future results.</p>
     </aside>
@@ -560,13 +562,12 @@ body.lock{overflow:hidden}
       <details><summary>Can I use it on a funded or prop firm account?</summary><p class="a">Some members do. Read your prop firm’s rules first, and size each trade so a single loss can’t break the daily or total drawdown limit.</p></details>
     </div>
     <div class="faq" id="p-algo" hidden>
-      <details><summary>What are your algos?</summary><p class="a">Four MT5 expert advisors that trade gold (XAUUSD) only: Elite Alpha Bot (the flagship), Elite Grid Bot, Elite Nano Grid Bot and Elite HFT Grid Bot. Tap any bot in the Algos section for its details.</p></details>
+      <details><summary>What are your algos?</summary><p class="a">Five MT5 expert advisors. Elite Alpha Bot (the flagship), Elite Grid Bot, Elite Nano Grid Bot and Elite HFT Grid Bot trade gold (XAUUSD) only. Elite Liquidity Bot, launching soon, is built for gold first and can also trade Bitcoin. Tap any bot in the Algos section for its details.</p></details>
       <details><summary>How is Elite Alpha Bot different from the grid bots?</summary><p class="a">Elite Alpha Bot trades session liquidity and places only about 1 to 2 trades a day, each with a strict stop loss and target. It uses limit orders you can see in advance on MT5, and you set your risk percentage. The grid bots average into positions, which can mean larger floating losses when price moves against them.</p></details>
       <details><summary>Is the performance real?</summary><p class="a">The live widget in the Algos section comes from my Myfxbook account. Click it to see the full record. Past performance does not guarantee future results.</p></details>
       <details><summary>Will it make money every month?</summary><p class="a">No. Algos go through drawdowns and results vary from month to month. Judge it over a longer period, not a few days, and only with risk you can afford.</p></details>
       <details><summary>Do I need to keep my computer on?</summary><p class="a">MT5 bots only trade while MT5 is running. Most users run them on a VPS so trading continues when their own computer is off.</p></details>
-      <details><summary>How much capital do I need?</summary><p class="a">It depends on the bot. With Elite Alpha Bot you set your risk percentage and capital sizing. Elite Grid Bot needs a higher base, 5 to 10 lakh, with 10 lakh ideal. Elite Nano Grid Bot is tuned for 1 to 2 lakh accounts. Never risk money you can’t afford to lose.</p></details>
-      <details><summary>Can I run it on a prop firm account?</summary><p class="a">Elite Alpha Bot, Elite Grid Bot and Elite Nano Grid Bot can be used on prop firm accounts. Elite HFT Grid Bot is not meant for prop firms. Rules differ between firms, so read yours before running any bot.</p></details>
+      <details><summary>Can I run it on a prop firm account?</summary><p class="a">Elite Liquidity Bot, Elite Alpha Bot, Elite Grid Bot and Elite Nano Grid Bot can be used on prop firm accounts. Elite HFT Grid Bot is not meant for prop firms. Rules differ between firms, so read yours before running any bot.</p></details>
       <details><summary>I live in India. Can I trade forex or gold CFDs?</summary><p class="a">Rules for residents of India under RBI and FEMA are strict. This is not legal advice. Read the FEMA disclaimer in the footer and check with a qualified professional before trading on any offshore platform.</p></details>
     </div>
   </div>
@@ -733,6 +734,8 @@ document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
 
 /* ---------- product details ---------- */
 const BUY='https://superprofile.bio/vp/rushitrades';
+// Elite Liquidity Bot: set to true on launch day. The pill becomes New and the button goes to the bundle link.
+const LIQ_LIVE=false;
 const RISK='No product removes risk. ';
 const DISC='No profit is guaranteed. Leverage is used in currency and gold trading, past performance cannot guarantee future results, and your capital can be at risk';
 const PD={
@@ -757,6 +760,13 @@ zones:{tag:'Free · TradingView indicator',title:'Institutional Zones Mapper',li
  steps:['Add it to your chart','Mark the zones near current price','Plan trades around them, with your own confirmation'],
  best:'Anyone who wants to see key levels without drawing them by hand.',
  note:'Zones show areas where price may react. They are not guaranteed turning points.'},
+botliq:{tag:(LIQ_LIVE?'New':'Launching soon')+' · MT5 algo',title:'Elite Liquidity Bot',bundle:1,link:LIQ_LIVE?BUY:'https://t.me/rushitradess',cta:LIQ_LIVE?'Get access today':'Get notified on Telegram',
+ sum:'A liquidity-concept bot, built for gold first and also usable on Bitcoin. It takes only about 2 to 3 trades a day, each with a tight stop loss and a defined take profit, and its lot size grows with your account balance automatically.',
+ facts:[['Markets','Gold (XAUUSD) first, also BTC'],['Platform','MetaTrader 5'],['Trades per day','About 2 to 3'],['Prop firms','Yes']],
+ gets:['Trades on a liquidity concept, built and tuned for gold (XAUUSD) first','Can also run on Bitcoin (BTC)','Every trade has a tight stop loss and a defined take profit','Compounding: lot size grows with your account balance automatically','Low frequency: about 2 to 3 trades a day'],
+ steps:['Install it on MT5 and choose gold or BTC','The bot waits for its liquidity setup and places each trade with SL and TP','Run it on a VPS and review the day’s 2 to 3 trades'],
+ best:'Traders who want a low-frequency, defined-risk algo for gold, with the option to run it on Bitcoin and let lot size compound with the account.',
+ note:'Compounding increases position size as the account grows, which also increases the size of losses. '+DISC+'. Crypto markets trade around the clock and can move sharply. Check that your prop firm allows expert advisors.'},
 botalpha:{tag:'Flagship · MT5 algo',title:'Elite Alpha Bot',bundle:1,
  sum:'The flagship bot, built on the logic of the Elite Alpha Indicator. It trades session liquidity and takes only about 1 to 2 trades a day, each with a strict stop loss and target.',
  facts:[['Market','Gold (XAUUSD) only'],['Platform','MetaTrader 5'],['Trades per day','About 1 to 2'],['Prop firms','Yes']],
@@ -766,17 +776,17 @@ botalpha:{tag:'Flagship · MT5 algo',title:'Elite Alpha Bot',bundle:1,
  note:DISC+'. Check that your prop firm allows expert advisors.'},
 botgrid:{tag:'Major bot · MT5 algo',title:'Elite Grid Bot',bundle:1,
  sum:'The major bot of the range. It first identifies the market direction, then trades only that way, averaging with calculated lots if price stretches against it.',
- facts:[['Market','Gold (XAUUSD) only'],['Capital','5 to 10 lakh (10 lakh ideal)'],['Style','One-direction averaging'],['Prop firms','Yes']],
+ facts:[['Market','Gold (XAUUSD) only'],['Platform','MetaTrader 5'],['Style','One-direction averaging'],['Prop firms','Yes']],
  gets:['Identifies the bias first, then places trades in that direction only','Averages one way, not on both sides','Starts with a smaller lot, then averages with proper calculated lots as price stretches in reverse','Runs on MetaTrader 5, gold only'],
- steps:['Install it on MT5 with the capital it needs','The bot reads the bias and opens a small first trade','If price stretches against it, it averages with calculated lots in the same direction'],
- best:'Well-capitalised traders who understand averaging strategies. 10 lakh is the ideal account size.',
- note:'It needs a higher capital base, 5 to 10 lakh. '+DISC+' with any grid algo.'},
+ steps:['Install it on MT5 and set it up','The bot reads the bias and opens a small first trade','If price stretches against it, it averages with calculated lots in the same direction'],
+ best:'Experienced traders who understand averaging strategies and the floating drawdowns that come with them.',
+ note:'Grid strategies can hold larger floating losses when price moves against them. '+DISC+' with any grid algo.'},
 botnano:{tag:'MT5 algo',title:'Elite Nano Grid Bot',bundle:1,
- sum:'The same strategy and logic as the Elite Grid Bot, with lower lots and a lighter grid so it can work on smaller accounts.',
- facts:[['Market','Gold (XAUUSD) only'],['Capital','1 to 2 lakh'],['Style','One-direction averaging'],['Prop firms','Yes']],
- gets:['Identifies the bias first, then places trades in that direction only','Averages on the reverse stretch, in the same direction','Lower lots and a lighter grid, tuned for 1 to 2 lakh accounts','Runs on MetaTrader 5, gold only'],
- steps:['Install it on MT5 on a 1 to 2 lakh account','The bot reads the bias and opens a small first trade','If price stretches against it, it averages in the same direction'],
- best:'Traders with a smaller account who want the Elite Grid logic with lighter sizing.',
+ sum:'The same strategy and logic as the Elite Grid Bot, with lower lots and a lighter grid.',
+ facts:[['Market','Gold (XAUUSD) only'],['Platform','MetaTrader 5'],['Style','One-direction averaging'],['Prop firms','Yes']],
+ gets:['Identifies the bias first, then places trades in that direction only','Averages on the reverse stretch, in the same direction','Lower lots and a lighter grid than the Elite Grid Bot','Runs on MetaTrader 5, gold only'],
+ steps:['Install it on MT5 and set it up','The bot reads the bias and opens a small first trade','If price stretches against it, it averages in the same direction'],
+ best:'Traders who want the Elite Grid logic with lighter sizing.',
  note:DISC+' with any grid algo.'},
 bothft:{tag:'MT5 algo · High risk',title:'Elite HFT Grid Bot',bundle:1,
  sum:'A high-frequency grid bot for experienced traders. It opens on a very small timeframe, averages aggressively and keeps its target price much closer.',
@@ -786,6 +796,7 @@ bothft:{tag:'MT5 algo · High risk',title:'Elite HFT Grid Bot',bundle:1,
  best:'Experienced traders who accept higher risk for higher reward and can monitor it.',
  note:'With higher reward comes higher risk. It is not meant for prop firm accounts. '+DISC+'.'}
 };
+if(LIQ_LIVE)document.getElementById('liqpill').textContent='New';
 const dlg=document.getElementById('pd'),pdb=document.getElementById('pd-body');
 const ARW='<span class="ar"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>';
 function openPD(k){
@@ -797,7 +808,7 @@ function openPD(k){
    +'<h4>How it works</h4><div class="steps">'+p.steps.map(x=>'<div>'+x+'</div>').join('')+'</div>'
    +'<h4>Best for</h4><p class="best">'+p.best+'</p>'
    +'<div class="good"><b>Good to know:</b> '+p.note+'</div>'
-   +'<div class="pd-cta"><a class="btn" href="'+(p.link||BUY)+'" target="_blank" rel="noopener">Get access today '+ARW+'</a>'
+   +'<div class="pd-cta"><a class="btn" href="'+(p.link||BUY)+'" target="_blank" rel="noopener">'+(p.cta||'Get access today')+' '+ARW+'</a>'
    +'<a class="btn ghost" href="https://t.me/rushitradess" target="_blank" rel="noopener">Ask a question</a></div>'
    +(p.bundle?'<p class="inc">Included in the all-in-one bundle with every indicator and algo.</p>':'');
   pdb.scrollTop=0; dlg.showModal(); document.body.classList.add('lock');
